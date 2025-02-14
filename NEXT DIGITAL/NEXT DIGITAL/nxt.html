@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXT DIGITAL | IN TOUCH WITH TECHNOLOGY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        #service_main_section {
+            font-family: Arial, sans-serif;
+            padding-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            min-height: 25vh;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* Soft shadow effect */
+
+            /* Background image */
+            background-image: url('IMGS/background_service.jpg');
+            background-size: cover; /* Ensures the image covers the entire section */
+            background-position: center; /* Centers the image */
+
+            /* Adding a semi-transparent overlay */
+            position: relative;
+        }
+
+        #service_main_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px; /* Match the border radius */
+            z-index: 1; /* Place the overlay behind the content */
+        }
+
+        #service_main_section > * {
+            z-index: 2; /* Ensure child elements appear above the overlay */
+        }
+
+
+
+        #service_container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+            color: #0047AB;
+            /*color: #fff;*/
+            /*padding: 50px 20px;*/
+            /*margin-bottom: 20px;*/
+        }
+        .services-wrapper {
+            display: flex;
+            flex-direction: row;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: flex-start;
+            gap: 16px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 50px;
+        }
+        .services-card {
+            background: #fff;
+            flex-direction: column;
+            height: 30vh;
+            width: 40%; /* Increase the width from 30% to 40% */
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 80px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .services-card:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        .services-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .service_heading {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+        }
+        /*.card_anchor{*/
+
+        /*}*/
+        #service_h2 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        #service_p {
+            font-size: 1rem;
+            text-align: center;
+        }
+        @media screen and (max-width: 1000px) {
+            .services-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .services-wrapper {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+        }
+
+
+        header {
+            background: linear-gradient(to right, #0047AB, #87CEEB);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 50px; /* Adjust the height of the logo */
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        nav {
+            background: #0047AB;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background: #87CEEB;
+            color: #0047AB;
+            border-radius: 5px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0047AB;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #87CEEB;
+            color: #0047AB;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .slideshow-container {
+            width: 100%;
+            max-width: 1920px;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .active {
+            display: block;
+        }
+        .section {
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('background-image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3; /* Reduced opacity to make the image subtle */
+            z-index: -1;
+        }
+        .section h2 {
+            color: #0047AB;
+            font-size: 26px;
+            position: relative;
+            z-index: 1;
+        }
+        .content-box {
+    max-width: 800px; /* Reduced max-width for a smaller box */
+    margin: auto;
+    padding: 20px; /* Reduced padding to fit content better */
+    background: rgba(249, 249, 249, 0.9); /* Semi-transparent background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+    height: auto; /* Let the height adjust to content */
+    min-height: auto; /* Remove fixed minimum height */
+    position: relative;
+    z-index: 1;
+}
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .footer {
+            background: #0047AB;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        /* Clients and Partners Section */
+.clients-partners-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.clients-partners-slide {
+    display: inline-block;
+    animation: slide 20s linear infinite;
+}
+
+.clients-partners-slide img {
+    margin: 0 20px;
+    height: 60px; /* Uniform size for all icons */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: middle;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect to enlarge icons */
+.clients-partners-slide img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    cursor: pointer;
+}
+
+/* Pause animation on hover */
+.clients-partners-container:hover .clients-partners-slide {
+    animation-play-state: paused;
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+        
+        /* Blue background for the "Our Clients" section */
+        #clients {
+            background: linear-gradient(to right, #0047AB, #87CEEB);
+            padding: 30px 0;
+        }
+        #clients h2 {
+            color: white; /* Change text color to white for better contrast */
+        }
+        /* Black background for the "Our Partners" section */
+        #partners {
+            background-color: black;
+            padding: 30px 0;
+        }
+        #partners h2 {
+            color: white; /* Change text color to white for better contrast */
+        }
+        /* About Us and Footer Section with Image Background */
+        .about-footer {
+            background-image: url('background-image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .about-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay */
+            z-index: 1;
+        }
+        .about-footer div {
+            max-width: 300px;
+            margin: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .about-footer h3 {
+            color: #0047AB;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .about-footer p, .about-footer ul {
+            color: #333;
+            line-height: 1.6;
+        }
+        .about-footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-footer ul li {
+            margin-bottom: 10px;
+        }
+        .about-footer ul li a {
+            color: #0047AB;
+            text-decoration: none;
+        }
+        .about-footer ul li a:hover {
+            text-decoration: underline;
+        }
+        .newsletter input[type="email"] {
+            padding: 10px;
+            width: 100%;
+            max-width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .newsletter button {
+            padding: 10px 20px;
+            background: #0047AB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .newsletter button:hover {
+            background: #87CEEB;
+        }
+        /* Feedback Form Styles */
+        .feedback-form {
+            display: none;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .feedback-form input[type="text"],
+        .feedback-form input[type="tel"],
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .feedback-form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .feedback-form button {
+            padding: 10px 20px;
+            background: #0047AB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .feedback-form button:hover {
+            background: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Logo added here -->
+        <div class="logo">
+            <a href="index.html"> <!-- Ensure this points to the correct location of index.html -->
+                <img src="logo-removebg-preview.png" alt="NEXT DIGITAL Logo">
+            </a>
+        </div>
+        NEXT DIGITAL - IN TOUCH WITH TECHNOLOGY
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <div class="dropdown">
+            <a href="#about">About Us</a>
+            <div class="dropdown-content">
+                <a href="mission-vision.html">Mission & Vision</a> <!-- Link to the new page -->
+                <a href="#goals">Goals</a>
+            </div>
+        </div>
+        <a href="#service_main_section">Services</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="slide active">
+            <img src="slide1.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="slide2.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="slide3.jpg" alt="Slide 3">
+        </div>
+    </div>
+
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <div class="content-box">
+            <p>NextDigital Limited was founded in 2011 by a group of Tanzanian ICT Experts and Entrepreneurs, who have a significant number of years of experience in the Information Communication and Telecommunications industry. 
+                NextDigital Limited is a Company Limited by Shares and registered in Tanzania by the Business Registration and Licensing Agency (BRELA).  NextDigital Limited is fully owned and operated by Tanzanians.</p>
+                <p>NextDigital Limited is attentive of the growing requirement for an efficient and effective system of supplying quality products and professional services. We endeavor to offer comprehensive solutions, technical support, service and warranty, to help our clients truly benefit from using our products, services and solutions.</p>
+        </div>
+    </div>
+
+     <div   id="service_main_section">
+         <h2  id="service_container" >Our Services</h2>
+         <section  class="services-section">
+             <div class="services-container">
+
+                 <div class="services-wrapper">
+                     <div class="services-card">
+
+                       <div ><h3 class="service_heading">Custom Software</h3></div>
+                         <div><p>We create software that is tailor-made to work the way you want and transform your business processes.</p></div>
+                         <img class="services-icon" src="IMGS/web_sample_image.png" alt="Custom Software" class="services-icon">
+<!--                         <div><a class="card_anchor" >Learn More</a></div>-->
+                     </div>
+                     <div class="services-card">
+
+                         <div><h3 class="service_heading">Systems Integration</h3></div>
+                         <div><p>In a connected world, your systems should be able to talk to each other and exchange information.</p></div>
+                         <img src="IMGS/integration.svg" alt="Systems Integration" class="services-icon">
+<!--                         <div><a class="card_anchor" >Learn More</a></div>-->
+                     </div>
+                     <div class="services-card">
+
+                         <div><h3 class="service_heading">IT Security & Advisory</h3></div>
+                         <p>Expert insights to help you protect your information assets and navigate technology challenges.</p>
+<!--                         <img src="IMGS/cloud_service.svg" alt="Cloud Services" class="services-icon">-->
+                         <img src="IMGS/it_security.svg" alt="IT Security" class="services-icon">
+<!--                         <div><a class="card_anchor" >Learn More</a></div>-->
+                     </div>
+                     <div class="services-card">
+
+                         <div><h3 class="service_heading">Cloud Services</h3></div>
+                         <p>More businesses are shifting to the "cloud" for reliability, saving on costs and security.</p>
+<!--                         <img src="IMGS/it_security.svg" alt="IT Security" class="services-icon">-->
+                         <img src="IMGS/cloud_service.svg" alt="Cloud Services" class="services-icon">
+<!--                         <div><a class="card_anchor" >Learn More</a></div>-->
+                     </div>
+
+
+             </div>
+
+             </div>
+
+         </section>
+
+
+
+    </div>
+
+    <div class="section" id="clients">
+        <h2>Our Clients</h2>
+        <div class="clients-partners-container">
+            <div class="clients-partners-slide">
+                <img src="taa.png" alt="Client 1">
+                <img src="tc.png" alt="Client 2">
+                <img src="tz.png" alt="Client 3">
+                <img src="udsm logo.png" alt="Client 4">
+                <img src="ardh.jpg" alt="Client 5">
+                <img src="SAO HILL INDUSTRIES LIMITED.jpg" alt="Client 6">
+                <img src="gpsa-logo.png" alt="Client 7">
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="partners">
+        <h2>Our Partners</h2>
+        <div class="clients-partners-container">
+            <div class="clients-partners-slide">
+                <img src="sophos-removebg-preview.png" alt="Partner 1">
+                <img src="yealink-removebg-preview.png" alt="Partner 2">
+                <img src="poly-removebg-preview.png" alt="Partner 3">
+                <img src="part3.png" alt="Partner 4">
+                <img src="dell.png" alt="Partner 5">
+            </div>
+        </div>
+    </div>
+
+    <div class="about-footer">
+        <div>
+            <h3>About Us</h3>
+            <p>Next Digital Limited was founded in 2011 by a group of Tanzanian ICT Experts and Entrepreneurs, 
+                who have a significant number of years of experience in the Information Communication and Telecommunications industry. 
+                NextDigital Limited is a Company Limited by Shares and registered in Tanzania by the Business Registration and Licensing Agency (BRELA).  
+                NextDigital Limited is fully owned and operated by Tanzanians.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#centers">Centers</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contacts</h3>
+            <p><strong>Address:</strong> NextDigital Limited
+                2nd Floor, Wing 2FA, Mbezi Beach Lutheran Center, Mbezi Beach, Dar Es Salaam, Tanzania
+                </p>
+            <p><strong>Phone:</strong> +255 714 129041</p>
+            <p><strong>Email:</strong> info@nextdigital.co.tz ; 
+                nextdigitaltz@yahoo.com
+                </p>
+        </div>
+        <div class="newsletter">
+            <h3>Feedback</h3>
+            <p><a href="#" id="feedback-link">Click here to leave feedback</a></p>
+            <div class="feedback-form" id="feedback-form">
+                <form id="comment-form">
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    <textarea id="comment" name="comment" placeholder="Your Comment" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 NEXT DIGITAL. All Rights Reserved.
+    </div>
+
+    <script>
+        // Slideshow functionality
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove("active");
+                if (index === currentIndex) {
+                    slide.classList.add("active");
+                }
+            });
+            currentIndex = (currentIndex + 1) % slides.length;
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+
+        // Feedback form toggle
+        const feedbackLink = document.getElementById("feedback-link");
+        const feedbackForm = document.getElementById("feedback-form");
+
+        feedbackLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            feedbackForm.style.display = feedbackForm.style.display === "block" ? "none" : "block";
+        });
+
+        // Form submission handling
+        const commentForm = document.getElementById("comment-form");
+
+        commentForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(commentForm);
+            const feedbackData = {};
+            formData.forEach((value, key) => {
+                feedbackData[key] = value;
+            });
+            console.log("Feedback Submitted:", feedbackData);
+            alert("Thank you for your feedback!");
+            commentForm.reset();
+            feedbackForm.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
