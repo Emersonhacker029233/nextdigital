@@ -4,160 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission & Vision - NEXT DIGITAL</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-        }
+<!--    <link rel="stylesheet" href="styles/mission_vision.css">-->
+    <link rel="stylesheet" href="styles/styles.css">
 
-        header {
-            background: linear-gradient(to right, #0047AB, #87CEEB);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .logo {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .logo img {
-            height: 40px; /* Adjust the height to match the main page */
-            width: auto; /* Maintain aspect ratio */
-        }
-
-        nav {
-            background: #0047AB;
-            padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            font-size: 18px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background: #87CEEB;
-            color: #0047AB;
-            border-radius: 5px;
-        }
-
-        /* Dropdown Styles */
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #0047AB;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #87CEEB;
-            color: #0047AB;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Section Styles */
-        .section {
-            text-align: center;
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content-box {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background: rgba(249, 249, 249, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s ease-in-out;
-            height: auto;
-            min-height: auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .footer {
-            background: #0047AB;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"> <!-- Correct link to index.html in the same folder -->
-                <img src="logo-removebg-preview.png" alt="NEXT DIGITAL Logo">
-            </a>
-        </div>
-    </header>
+<!--    <header>-->
+<!--        <div class="logo">-->
+<!--            <a href="assets/images_01/index.html"> &lt;!&ndash; Correct link to index.html in the same folder &ndash;&gt;-->
+<!--                <img src="assets/images_01/logo-removebg-preview.png" alt="NEXT DIGITAL Logo">-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </header>-->
 
-    <nav>
-        <a href="index.html">Home</a>
+<!--    <nav>-->
+<!--        <a href="assets/images_01/index.html">Home</a>-->
+<!--        <div class="dropdown">-->
+<!--            <a href="#about">About Us</a>-->
+<!--            <div class="dropdown-content">-->
+<!--                <a href="mission-vision.html">Mission & Vision</a>-->
+<!--                <a href="#goals">Goals</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <a href="#service_main_section">Services</a>-->
+<!--        <a href="#contact">Contact Us</a>-->
+<!--    </nav>-->
+<nav>
+    <!-- Logo -->
+    <div class="logo">
+        <a href="nxt.html">
+            <img src="assets/images_01/logo-removebg-preview.png" alt="NEXT DIGITAL Logo">
+        </a>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+        <a href="nxt.html#home">Home</a> <!-- Link to the home section on the nxt.html page -->
         <div class="dropdown">
-            <a href="#about">About Us</a>
+            <a href="nxt.html#about">About Us</a> <!-- Link to the about section on nxt.html page -->
             <div class="dropdown-content">
-                <a href="mission-vision.html">Mission & Vision</a>
-                <a href="#goals">Goals</a>
+                <a href="mission-vision.html">Mission & Vision</a> <!-- Link to mission-vision.html -->
+                <a href="nxt.html#goals">Goals</a> <!-- Link to goals section on nxt.html -->
             </div>
         </div>
-        <a href="#service_main_section">Services</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+        <a href="nxt.html#service_main_section">Services</a> <!-- Link to services section on nxt.html -->
+        <a href="nxt.html#">Contact Us</a> <!-- Link to contact section on nxt.html -->
+    </div>
+</nav>
+
 
     <div class="section" id="mission">
         <h2>Mission & Vision</h2>
         <div class="content-box">
-            <p>- To be the premier source of Information and Communication Technologies products, services and solutions by delivering outstanding products and services.  
-                In so doing, we will create a company synonymous with quality, creativity, 
+            <p>- To be the premier source of Information and Communication Technologies products, services and solutions by delivering outstanding products and services.
+                In so doing, we will create a company synonymous with quality, creativity,
                 professionalism and excellence thus allowing us to succeed where others have failed and prosper as a business.</p>
         </div>
     </div>
@@ -174,8 +74,56 @@
         </div>
     </div>
 
-    <div class="footer">
-        © 2025 NEXT DIGITAL. All Rights Reserved.
+<hr class="divider">
+
+<div class="about-footer">
+    <div>
+        <h3>About Us</h3>
+        <p>Next Digital Limited was founded in 2011 by a group of Tanzanian ICT Experts and Entrepreneurs,
+            who have a significant number of years of experience in the Information Communication and Telecommunications industry.
+            NextDigital Limited is a Company Limited by Shares and registered in Tanzania by the Business Registration and Licensing Agency (BRELA).
+            NextDigital Limited is fully owned and operated by Tanzanians.</p>
     </div>
+    <div>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#centers">Centers</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Contacts</h3>
+        <p><strong>Address:</strong> NextDigital Limited
+            2nd Floor, Wing 2FA, Mbezi Beach Lutheran Center, Mbezi Beach, Dar Es Salaam, Tanzania
+        </p>
+        <p><strong>Phone:</strong> +255 714 129041</p>
+        <p><strong>Email:</strong> info@nextdigital.co.tz ;
+            nextdigitaltz@yahoo.com
+        </p>
+    </div>
+    <div class="newsletter">
+        <h3>Feedback</h3>
+        <p><a href="#" id="feedback-link">Click here to leave feedback</a></p>
+        <div class="feedback-form" id="feedback-form">
+            <form id="comment-form">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                <textarea id="comment" name="comment" placeholder="Your Comment" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    © 2025 NEXT DIGITAL. All Rights Reserved.
+</div>
+
 </body>
 </html>
