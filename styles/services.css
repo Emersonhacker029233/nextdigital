@@ -1,0 +1,166 @@
+#service_main_section {
+    font-family: Arial, sans-serif;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 25vh;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+
+    /* Background image */
+    background-image: url('/docs/assetsssets/IMGS/background_service.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+#service_main_section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px; /* Match the border radius */
+    z-index: 1; /* Place the overlay behind the content */
+}
+
+#service_main_section > * {
+    z-index: 2; /* Ensure child elements appear above the overlay */
+}
+
+#service_container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #0047AB;
+    /*color: #fff;*/
+    /*padding: 50px 20px;*/
+    /*margin-bottom: 20px;*/
+}
+
+.services-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.services-card {
+    background: #fff;
+    flex-direction: column;
+    min-height: 30vh; /* Minimum height for the cards */
+    width: 23%; /* Width set for 4 cards on large screens */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 80px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    display: flex; /* Use flexbox to allow content to grow */
+    justify-content: flex-start; /* Ensure content stays at the top */
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box; /* Include padding in the width and height calculations */
+}
+
+.services-card p {
+    flex-grow: 1; /* Allow paragraphs to grow and prevent overflow */
+    word-wrap: break-word; /* Ensure text wraps to the next line if it's too long */
+}
+
+
+.services-card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.services-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.service_heading {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+#service_h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#service_p {
+    font-size: 1rem;
+    text-align: center;
+}
+@media screen and (min-width: 1000px) {
+    .services-wrapper {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards in a row on large screens */
+        gap: 20px;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .services-card {
+        width: 23%; /* Width set for 4 cards on large screens */
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .services-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+        gap: 20px;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .services-card {
+        width: 90%; /* Adjust to 90% width for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-wrapper {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 16px;
+    }
+
+    .services-card {
+        width: 90%; /* Adjust to 90% width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-wrapper {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        gap: 10px; /* Reduce gap for very small screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .services-card {
+        width: 100%; /* Ensure card takes up full width on very small screens */
+        padding: 20px; /* Reduce padding for smaller screens */
+        margin-bottom: 30px; /* Reduce bottom margin to fit more content */
+    }
+
+    .service_heading {
+        font-size: 1rem; /* Adjust font size for small screens */
+        margin-bottom: 30px; /* Reduce margin */
+    }
+
+    #service_h2 {
+        font-size: 0.9rem; /* Smaller font for headings on small screens */
+    }
+
+    #service_p {
+        font-size: 0.9rem; /* Smaller font for paragraphs on small screens */
+    }
+}

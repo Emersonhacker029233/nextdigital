@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background: linear-gradient(to right, #0047AB, #87CEEB);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo img {
+    height: 40px; /* Adjust the height to match the main page */
+    width: auto; /* Maintain aspect ratio */
+}
+
+nav {
+    background: #0047AB;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #87CEEB;
+    color: #0047AB;
+    border-radius: 5px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0047AB;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #87CEEB;
+    color: #0047AB;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Section Styles */
+.section {
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(249, 249, 249, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+    height: auto;
+    min-height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+    background: #0047AB;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
